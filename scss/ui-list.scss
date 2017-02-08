@@ -9,6 +9,7 @@
   -webkit-margin-end: 0;
   -webkit-padding-start: 0;
 
+  .ui-list__header,
   .ui-list__item {
     font-size: 16px;
     font-weight: 400;
@@ -28,5 +29,17 @@
     box-sizing: border-box;
     display: block;
     text-decoration: none;
+  }
+
+  .ui-list__header {
+    padding: 24px 16px 8px;
+    font-size: 13px;
+  }
+
+  .ui-list__separator {
+    box-sizing: border-box;
+    display: block;
+    min-height: 16px;
+    background-color: rgba(0, 0, 0, 0.14);
   }
 }
