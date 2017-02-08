@@ -13,10 +13,12 @@ class UISelectfield extends xin.Component {
       value: {
         type: String,
         notify: true,
+        observer: 'valueChanged(value)',
       },
 
       label: {
         type: String,
+        value: '',
       },
 
       options: {
@@ -50,7 +52,11 @@ class UISelectfield extends xin.Component {
     this.optionsChanged(this.options);
   }
 
-  optionsChanged (options) {
+  valueChanged (value) {
+    this.fire('change');
+  }
+
+  optionsChanged (options = []) {
     if (!this.$.field) {
       return;
     }
