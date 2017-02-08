@@ -14,10 +14,16 @@ class UITextfield extends xin.Component {
 
       label: {
         type: String,
+        value: '',
       },
 
       type: {
         type: String,
+        value: 'text',
+      },
+
+      disabled: {
+        type: Boolean,
       },
     });
   }
