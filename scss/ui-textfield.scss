@@ -33,6 +33,11 @@
     }
   }
 
+  select.ui-textfield__input {
+    padding: 4px 0 5px 0;
+    -webkit-appearance: none;
+  }
+
   .ui-textfield__label {
     bottom: 0;
     color: rgba(0,0,0,.26);
