@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "material-design-icons": "^3.0.1",
-    "xin": "xinix-technology/xin#next"
+    "xin": "xinix-technology/xin#2.3.1"
   },
   "devDependencies": {
     "eslint": "^3.14.1",
@@ -16,6 +16,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Ganesha <reekoheek@gmail.com>",
+  "license": "MIT"
 }
