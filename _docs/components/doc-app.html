@@ -1,0 +1,15 @@
+<xin-lazy-view-middleware></xin-lazy-view-middleware>
+
+<ui-drawer id="drawer">
+  <div class="ui-list" id="menuList">
+    <a class="ui-list__item" href="#!/">Home</a>
+  </div>
+</ui-drawer>
+
+<div class="layout horizontal content">
+  <xin-pager class="flex">
+    <doc-page lazy-view uri="/"></doc-page>
+    <doc-page lazy-view uri="/components/{name}"></doc-page>
+    <doc-page lazy-view uri="/css/{name}"></doc-page>
+  </xin-pager>
+</div>

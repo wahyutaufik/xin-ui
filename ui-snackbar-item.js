@@ -2,8 +2,6 @@ import xin from 'xin';
 import html from './templates/ui-snackbar-item.html';
 
 class UISnackbarItem extends xin.Component {
-
-
   get template () {
     return html;
   }

@@ -19,7 +19,11 @@ const container = (() => {
 class UISnackbar extends xin.Component {
   static create (options) {
     return new Promise(resolve => {
-      const bar = document.createElement('ui-snackbar');
+      // FIXME workaround bug in xin customElements v1, must not have children until connected
+      // const bar = document.createElement('ui-snackbar');
+      let div = document.createElement('div');
+      div.innerHTML = '<ui-snackbar></ui-snackbar>';
+      let bar = div.querySelector('ui-snackbar');
       setTimeout(() => {
         bar.all(options);
         resolve(bar);
@@ -59,8 +63,8 @@ class UISnackbar extends xin.Component {
     return html;
   }
 
-  created () {
-    super.created();
+  attached () {
+    super.attached();
 
     this.classList.add('ui-snackbar');
   }

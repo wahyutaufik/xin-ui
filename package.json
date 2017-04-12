@@ -4,17 +4,36 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "marked": "^0.3.6",
     "material-design-icons": "^3.0.1",
+    "prismjs": "^1.6.0",
     "xin": "xinix-technology/xin#2.3.1"
   },
   "devDependencies": {
+    "css-loader": "^0.28.0",
     "eslint": "^3.14.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint-plugin-standard": "^2.0.1",
+    "extract-loader": "^0.1.0",
+    "file-loader": "^0.11.1",
+    "fs-promise": "^2.0.2",
+    "html-loader": "^0.4.5",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.3.3",
+    "webpack-dashboard": "^0.3.0",
+    "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "karma start --single-run",
+    "dev": "karma start",
+    "docs:serve": "webpack-dev-server --env.mode=docs",
+    "docs": "webpack-dashboard -- webpack-dev-server --env.dashboard=1 --env.mode=docs",
+    "build": "webpack --env.mode=docs"
   },
   "author": "Ganesha <reekoheek@gmail.com>",
   "license": "MIT"

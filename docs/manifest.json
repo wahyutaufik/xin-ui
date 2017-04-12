@@ -1,0 +1,36 @@
+{
+  "components": [
+    {
+      "title": "ui-drawer",
+      "file": "pages/components/ui-drawer.md",
+      "uri": "/components/ui-drawer"
+    }
+  ],
+  "css": [
+    {
+      "title": "ui-button",
+      "file": "pages/css/ui-button.md",
+      "uri": "/css/ui-button"
+    },
+    {
+      "title": "ui-header",
+      "file": "pages/css/ui-header.md",
+      "uri": "/css/ui-header"
+    },
+    {
+      "title": "ui-layout",
+      "file": "pages/css/ui-layout.md",
+      "uri": "/css/ui-layout"
+    },
+    {
+      "title": "ui-list",
+      "file": "pages/css/ui-list.md",
+      "uri": "/css/ui-list"
+    },
+    {
+      "title": "ui-header",
+      "file": "pages/css/ui-typography.md",
+      "uri": "/css/ui-typography"
+    }
+  ]
+}
