@@ -59,6 +59,14 @@
 }
 
 @media screen and (min-width: 1000px) {
+  .ui-drawer {
+    width: 240px;
+  }
+
+  .ui-drawer + * {
+    margin-left: 240px;
+  }
+
   .ui-drawer__content {
     transform: translateX(0);
   }

@@ -1,5 +1,5 @@
-import xin from 'xin';
-import View from 'xin/components/view';
+import xin from '@xinix/xin';
+import View from '@xinix/xin/components/view';
 import marked from 'marked';
 import Prism from 'prismjs';
 import html from './doc-page.html';

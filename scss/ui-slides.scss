@@ -1,0 +1,22 @@
+@import '../node_modules/swiper/dist/css/swiper.css';
+
+ui-slides {
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-pagination {
+    display: none;
+  }
+
+  &[show-navigation-button] {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: block;
+    }
+  }
+
+  &[show-default-pagination] {
+    .swiper-pagination {
+      display: block;
+    }
+  }
+}

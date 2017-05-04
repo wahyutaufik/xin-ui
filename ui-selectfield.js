@@ -1,9 +1,9 @@
-import xin from 'xin';
+import { Component, define } from '@xinix/xin';
 import html from './templates/ui-selectfield.html';
 
 import './scss/ui-textfield.scss';
 
-class UISelectfield extends xin.Component {
+export class UISelectfield extends Component {
   get template () {
     return html;
   }
@@ -61,27 +61,29 @@ class UISelectfield extends xin.Component {
       return;
     }
 
-    const fragment = document.createDocumentFragment();
+    this.debounce('optionsChanged', () => {
+      options = options || [];
 
-    if (options.length > 0 && options[0][this.valueKey]) {
-      let optEl = document.createElement('option');
-      fragment.appendChild(optEl);
-    }
+      const fragment = document.createDocumentFragment();
 
-    options.forEach(opt => {
-      const optEl = document.createElement('option');
-      optEl.value = opt[this.valueKey];
-      optEl.innerHTML = opt[this.labelKey];
-      fragment.appendChild(optEl);
+      if (options.length > 0 && options[0][this.valueKey]) {
+        let optEl = document.createElement('option');
+        fragment.appendChild(optEl);
+      }
+
+      options.forEach(opt => {
+        const optEl = document.createElement('option');
+        optEl.value = opt[this.valueKey];
+        optEl.innerHTML = opt[this.labelKey];
+        fragment.appendChild(optEl);
+      });
+
+      this.$.field.innerHTML = '';
+      this.$.field.appendChild(fragment);
+
+      this.$.field.value = this.value || '';
     });
-
-    this.$.field.innerHTML = '';
-    this.$.field.appendChild(fragment);
-
-    this.$.field.value = this.value || '';
   }
 }
 
-xin.define('ui-selectfield', UISelectfield);
-
-export default UISelectfield;
+define('ui-selectfield', UISelectfield);

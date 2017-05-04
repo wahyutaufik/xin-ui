@@ -1,5 +1,4 @@
 require('file-loader?name=[name].[ext]!extract-loader?!./index.html');
-require('xin/css/layout.css');
 require('xin-ui/scss/ui-layout.scss');
 require('xin-ui/scss/ui-typography.scss');
 require('xin-ui/scss/ui-list.scss');

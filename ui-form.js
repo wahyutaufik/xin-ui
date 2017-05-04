@@ -1,8 +1,8 @@
-import xin from 'xin';
+import { Component, define } from '@xinix/xin';
 
 import './scss/ui-form.scss';
 
-class UIForm extends xin.Component {
+export class UIForm extends Component {
   created () {
     super.created();
 
@@ -10,6 +10,4 @@ class UIForm extends xin.Component {
   }
 }
 
-xin.define('ui-form', UIForm);
-
-export default UIForm;
+define('ui-form', UIForm);

@@ -16,3 +16,5 @@ import 'xin-cli/scss/ui-button.scss';
 
 - ui-button--icon
 - ui-button--handle
+- ui-button--colored
+- ui-button--block

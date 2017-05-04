@@ -1,4 +1,4 @@
-import xin from 'xin';
+import { Component, define } from '@xinix/xin';
 import html from './templates/ui-snackbar.html';
 
 import './scss/ui-snackbar.scss';
@@ -16,7 +16,7 @@ const container = (() => {
   return container;
 })();
 
-class UISnackbar extends xin.Component {
+export class UISnackbar extends Component {
   static create (options) {
     return new Promise(resolve => {
       // FIXME workaround bug in xin customElements v1, must not have children until connected
@@ -108,6 +108,4 @@ class UISnackbar extends xin.Component {
   }
 }
 
-xin.define('ui-snackbar', UISnackbar);
-
-export default UISnackbar;
+define('ui-snackbar', UISnackbar);

@@ -1,9 +1,9 @@
-import xin from 'xin';
+import { Component, define } from '@xinix/xin';
 import html from './templates/ui-textfield.html';
 
 import './scss/ui-textfield.scss';
 
-class UITextfield extends xin.Component {
+export class UITextfield extends Component {
   get props () {
     return Object.assign({}, super.props, {
       value: {
@@ -40,6 +40,4 @@ class UITextfield extends xin.Component {
   }
 }
 
-xin.define('ui-textfield', UITextfield);
-
-export default UITextfield;
+define('ui-textfield', UITextfield);

@@ -1,7 +1,7 @@
-import xin from 'xin';
+import { Component, define } from '@xinix/xin';
 import html from './templates/ui-snackbar-item.html';
 
-class UISnackbarItem extends xin.Component {
+export class UISnackbarItem extends Component {
   get template () {
     return html;
   }
@@ -50,6 +50,4 @@ class UISnackbarItem extends xin.Component {
   }
 }
 
-xin.define('ui-snackbar-item', UISnackbarItem);
-
-export default UISnackbarItem;
+define('ui-snackbar-item', UISnackbarItem);

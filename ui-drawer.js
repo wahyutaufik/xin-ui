@@ -1,10 +1,9 @@
-import xin from 'xin';
+import { Component, define, event } from '@xinix/xin';
 import html from './templates/ui-drawer.html';
-import event from 'xin/event';
 
 import './scss/ui-drawer.scss';
 
-class UIDrawer extends xin.Component {
+export class UIDrawer extends Component {
   get template () {
     return html;
   }
@@ -58,4 +57,4 @@ class UIDrawer extends xin.Component {
   }
 }
 
-xin.define('ui-drawer', UIDrawer);
+define('ui-drawer', UIDrawer);

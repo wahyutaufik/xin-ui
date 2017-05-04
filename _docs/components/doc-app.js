@@ -1,9 +1,9 @@
-import xin from 'xin';
-import App from 'xin/components/app';
+import xin from '@xinix/xin';
+import App from '@xinix/xin/components/app';
 import html from './doc-app.html';
 
-import 'xin/middlewares/lazy-view';
-import 'xin/components/pager';
+import '@xinix/xin/middlewares/lazy-view';
+import '@xinix/xin/components/pager';
 import 'xin-ui/ui-drawer';
 
 class DocApp extends App {
