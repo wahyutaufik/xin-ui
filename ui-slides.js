@@ -1,6 +1,7 @@
 import { Component, define } from '@xinix/xin';
 
 import html from './templates/ui-slides.html';
+import 'swiper/dist/css/swiper.css';
 import './scss/ui-slides.scss';
 
 export class UISlides extends Component {
