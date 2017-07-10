@@ -36,6 +36,10 @@ export class UISelectfield extends Component {
         type: String,
         value: 'value',
       },
+      
+      avoidEmpty: {
+        type: Boolean,
+      },
     });
   }
 
