@@ -1,16 +1,16 @@
 const path = require('path');
 const glob = require('glob');
-const fs = require('fs-promise');
-const DashboardPlugin = require('webpack-dashboard/plugin');
+const fs = require('fs-extra');
 const markdownParse = require('./_docs/lib/markdown-parse');
+const BabiliPlugin = require('babili-webpack-plugin');
 
-module.exports = function ({ mode, dashboard = false, minify = false }) {
+module.exports = function ({ mode, minify = false }) {
   let env = {
     mode,
     minify: Boolean(minify),
-    dashboard: Boolean(dashboard),
   };
-  console.log('ENV', env);
+
+  console.info('ENV', env);
 
   return {
     entry: {
@@ -42,20 +42,47 @@ module.exports = function ({ mode, dashboard = false, minify = false }) {
           test: /\.(woff2?|eot|ttf)(\?.*)?$/i,
           use: getUrlLoader('./img/[name].[ext]'),
         },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: getBabelLoader(env),
+        },
       ],
     },
   };
 };
 
-function getPlugins ({ mode, dashboard }) {
+function getBabelLoader ({ mode }) {
+  let plugins = [
+    // require.resolve('babel-plugin-transform-async-to-generator'),
+    // [ require.resolve('babel-plugin-__coverage__'), { 'ignore': 'node_modules' } ],
+    // require.resolve('babel-plugin-syntax-dynamic-import'),
+  ];
+
+  if (mode !== 'docs') {
+    plugins.push(require.resolve('babel-plugin-istanbul'));
+  }
+
+  let presets = [
+    // require.resolve('babel-preset-es2015'),
+    // require.resolve('babel-preset-stage-3'),
+  ];
+
+  return {
+    loader: 'babel-loader',
+    options: {
+      babelrc: false,
+      plugins,
+      presets,
+      cacheDirectory: true,
+    },
+  };
+}
+
+function getPlugins ({ mode }) {
   let plugins = [];
   if (mode === 'docs') {
     plugins.push(new DocPlugin());
-  }
-  if (dashboard) {
-    plugins.push(
-      new DashboardPlugin()
-    );
   }
   return plugins;
 }
