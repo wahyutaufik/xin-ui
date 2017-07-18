@@ -25,7 +25,7 @@ export class UIDrawer extends Component {
       return;
     }
 
-    return await new Promise((resolve, reject) => {
+    await new Promise((resolve, reject) => {
       event(drawer.$.content).once('transitionend', () => {
         this.async(resolve, 50);
       });
@@ -39,7 +39,7 @@ export class UIDrawer extends Component {
       return;
     }
 
-    return await new Promise((resolve, reject) => {
+    await new Promise((resolve, reject) => {
       event(drawer.$.content).once('transitionend', () => {
         this.async(resolve, 50);
       });

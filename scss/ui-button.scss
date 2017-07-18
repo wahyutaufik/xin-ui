@@ -2,7 +2,7 @@
   background: 0 0;
   border: none;
   border-radius: 2px;
-  color: #000;
+  color: #3f51b5;
   position: relative;
   height: 36px;
   margin: 0;
@@ -23,54 +23,110 @@
   text-align: center;
   line-height: 36px;
   vertical-align: middle;
+
+  &.ui-button--secondary {
+    color: #ff4081;
+  }
+
+  &.ui-button--danger {
+    color: #f53d3d;
+  }
+
+  &.ui-button--light {
+    color: #f4f4f4;
+  }
+
+  &.ui-button--dark {
+    color: #222;
+  }
+
+  &.ui-button--outline {
+    border: 1px solid #3f51b5;
+
+    &.ui-button--secondary {
+      border: 1px solid #ff4081;
+    }
+
+    &.ui-button--danger {
+      border: 1px solid #f53d3d;
+    }
+
+    &.ui-button--light {
+      border: 1px solid #f4f4f4;
+    }
+
+    &.ui-button--dark {
+      border: 1px solid #222;
+    }
+  }
+
+
+  &.ui-button--colored {
+    background: #3f51b5;
+    color: #fff;
+
+    &.ui-button--secondary {
+      background: #ff4081;
+    }
+
+    &.ui-button--danger {
+      background: #f53d3d;
+    }
+
+    &.ui-button--light {
+      background: #f4f4f4;
+      color: #000;
+    }
+
+    &.ui-button--dark {
+      background: #222;
+    }
+  }
+
+  &.ui-button--raised {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  }
+
+  &.ui-button--block {
+    width: 100%;
+  }
+
+  &.ui-button--icon {
+    border-radius: 50%;
+    font-size: 24px;
+    height: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 32px;
+    width: 32px;
+    padding: 0;
+    overflow: hidden;
+    // color: inherit;
+    line-height: normal;
+
+    .material-icons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-12px,-12px);
+      line-height: 24px;
+      width: 24px;
+    }
+  }
+
+  * {
+    vertical-align: middle;
+  }
 }
 
-.ui-button * {
-  vertical-align: middle;
-}
+.ui-header {
+  .ui-button {
+    height: 100%;
+    color: #fff;
+    flex-shrink: 0;
 
-.ui-button--colored {
-  background: #3f51b5;
-  color: #fff;
-}
-
-.ui-button--raised {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-}
-
-.ui-button--block {
-  width: 100%;
-}
-
-.ui-button--icon {
-  border-radius: 50%;
-  font-size: 24px;
-  height: 32px;
-  margin-left: 0;
-  margin-right: 0;
-  min-width: 32px;
-  width: 32px;
-  padding: 0;
-  overflow: hidden;
-  // color: inherit;
-  line-height: normal;
-}
-
-.ui-button--icon .material-icons {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-12px,-12px);
-  line-height: 24px;
-  width: 24px;
-}
-
-.ui-header .ui-button {
-  height: 100%;
-  color: #fff;
-  flex-shrink: 0;
-}
-
-.ui-header .ui-button--icon {
-  width: 56px;
+    &.ui-button--icon {
+      width: 56px;
+    }
+  }
 }

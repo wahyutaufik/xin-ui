@@ -39,13 +39,14 @@ html.ui-fit {
     flex-wrap: wrap;
   }
 
-  .ui-flex {
-    -webkit-box-flex: 1;
-    box-flex: 1;
+}
 
-    -webkit-flex: 1;
-    flex: 1;
-  }
+.ui-flex {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+
+  -webkit-flex: 1;
+  flex: 1;
 }
 
 .ui-spacer {
@@ -66,6 +67,16 @@ html.ui-fit {
 
 .ui-scroll {
   overflow: auto;
+}
+
+.ui-vscroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.ui-hscroll {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 .ui-panel {

@@ -1,0 +1,17 @@
+ui-numberfield {
+  display: block;
+  width: auto;
+
+  .container {
+    display: flex;
+
+    input {
+      text-align: right;
+      height: 35px;
+    }
+
+    .ui-button {
+      min-width: auto;
+    }
+  }
+}

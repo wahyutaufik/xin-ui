@@ -33,7 +33,8 @@ export class UISnackbar extends Component {
 
   static async show (options) {
     const bar = await UISnackbar.create(options);
-    return await bar.show();
+    let result = await bar.show();
+    return result;
   }
 
   get props () {
