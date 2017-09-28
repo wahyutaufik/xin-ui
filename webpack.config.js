@@ -1,8 +1,7 @@
 const path = require('path');
-const glob = require('glob');
-const fs = require('fs-extra');
-const markdownParse = require('./_docs/lib/markdown-parse');
-const BabiliPlugin = require('babili-webpack-plugin');
+const DocPlugin = require('./docs-src/webpack-plugins/doc-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const BabiliPlugin = require('babili-webpack-plugin');
 
 module.exports = function ({ mode, minify = false }) {
   let env = {
@@ -14,11 +13,11 @@ module.exports = function ({ mode, minify = false }) {
 
   return {
     entry: {
-      index: './_docs/index.js',
+      index: './docs-src/index.js',
     },
     output: {
-      path: path.join(__dirname, 'docs'),
-      filename: `[name]${minify ? '.min' : ''}.js`,
+      path: path.join(__dirname, 'www'),
+      filename: `js/[name]${minify ? '.min' : ''}.js`,
     },
     devtool: 'sourcemap',
     resolve: {
@@ -54,14 +53,15 @@ module.exports = function ({ mode, minify = false }) {
 
 function getBabelLoader ({ mode }) {
   let plugins = [
+    require.resolve('babel-plugin-syntax-dynamic-import'),
     // require.resolve('babel-plugin-transform-async-to-generator'),
     // [ require.resolve('babel-plugin-__coverage__'), { 'ignore': 'node_modules' } ],
     // require.resolve('babel-plugin-syntax-dynamic-import'),
   ];
 
-  if (mode !== 'docs') {
-    plugins.push(require.resolve('babel-plugin-istanbul'));
-  }
+  // if (mode !== 'docs') {
+  //   plugins.push(require.resolve('babel-plugin-istanbul'));
+  // }
 
   let presets = [
     // require.resolve('babel-preset-es2015'),
@@ -82,6 +82,9 @@ function getBabelLoader ({ mode }) {
 function getPlugins ({ mode }) {
   let plugins = [];
   if (mode === 'docs') {
+    plugins.push(new HtmlWebpackPlugin({
+      template: './docs-src/index.html',
+    }));
     plugins.push(new DocPlugin());
   }
   return plugins;
@@ -95,53 +98,4 @@ function getUrlLoader (name = '[name].[ext]') {
       name: name,
     },
   };
-}
-
-class DocPlugin {
-  apply (compiler) {
-    compiler.plugin('emit', (compilation, callback) => {
-      let components = [];
-      let css = [];
-
-      glob.sync('./_docs/pages/*/*.md').forEach(srcFile => {
-        let file = srcFile.replace('./_docs/', '');
-        let content = fs.readFileSync(srcFile, 'utf8');
-
-        compilation.assets[file] = {
-          source () {
-            return content;
-          },
-
-          size () {
-            return content.length;
-          },
-        };
-
-        let { meta } = markdownParse(content);
-        meta.file = file;
-        if (srcFile.indexOf('css') !== -1) {
-          meta.uri = '/css/' + path.basename(file, '.md');
-          css.push(meta);
-        } else {
-          meta.uri = '/components/' + path.basename(file, '.md');
-          components.push(meta);
-        }
-      });
-
-      let manifest = { components, css };
-      let manifestContent = JSON.stringify(manifest, null, 2);
-
-      compilation.assets['manifest.json'] = {
-        source () {
-          return manifestContent;
-        },
-
-        size () {
-          return manifestContent.length;
-        },
-      };
-
-      callback();
-    });
-  }
 }

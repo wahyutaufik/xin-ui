@@ -1,4 +1,4 @@
-import xin from '@xinix/xin';
+import { define } from '@xinix/xin';
 import App from '@xinix/xin/components/app';
 import html from './doc-app.html';
 
@@ -60,4 +60,5 @@ class DocApp extends App {
     this.$.menuList.appendChild(sep);
   }
 }
-xin.define('doc-app', DocApp);
+
+define('doc-app', DocApp);
