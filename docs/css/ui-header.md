@@ -20,6 +20,8 @@ import 'xin-cli/scss/ui-header.scss';
 
 ### ui-header__row
 
+Add row to `ui-header`
+
 <div class="ui-panel" style="padding: 0">
   <header class="ui-header">
     <div class="ui-header__row">
@@ -48,3 +50,7 @@ Header can have multi rows
     <p>Content</p>
   </div>
 </div>
+
+### ui-header__title
+
+Show title of `ui-header`
