@@ -99,5 +99,9 @@
 
   .ui-drawer--handle {
     display: none!important;
+
+    + .ui-header__title {
+      padding-left: 16px;
+    }
   }
 }

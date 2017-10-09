@@ -14,16 +14,43 @@ export class UINumberField extends Component {
     return Object.assign({}, super.props, {
       value: {
         type: Number,
+        notify: true,
+      },
+
+      min: {
+        type: Number,
+      },
+
+      max: {
+        type: Number,
       },
     });
   }
 
   inc () {
-    this.set('value', Number(this.value || 0) + 1);
+    let value = Number(this.value || 0) + 1;
+
+    if (typeof this.max !== 'undefined' && value > this.max) {
+      return;
+    }
+
+    if (typeof this.min !== 'undefined' && value < this.min) {
+      value = this.min;
+    }
+    this.set('value', value);
   }
 
   dec () {
-    this.set('value', Number(this.value || 0) - 1);
+    let value = Number(this.value || 0) - 1;
+
+    if (typeof this.min !== 'undefined' && value < this.min) {
+      return;
+    }
+
+    if (typeof this.max !== 'undefined' && value > this.max) {
+      value = this.max;
+    }
+    this.set('value', value);
   }
 }
 

@@ -6,6 +6,8 @@ title: ui-drawer
 import 'xin-ui/ui-drawer';
 ```
 
+## Usage
+
 ```html
 <ui-drawer id="drawer">
   <div class="ui-list">
@@ -17,3 +19,5 @@ import 'xin-ui/ui-drawer';
   </div>
 </ui-drawer>
 ```
+
+Drawer can be drag out to open or close menu

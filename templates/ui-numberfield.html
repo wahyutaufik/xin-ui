@@ -1,5 +1,5 @@
 <div class="container">
-  <button class="ui-button ui-button--colored ui-button--raised" (click)="dec()"> - </button>
-  <input class="ui-input" type="text" value="{{value}}">
-  <button class="ui-button ui-button--colored ui-button--raised" (click)="inc()"> + </button>
+  <button class="ui-button ui-button--colored ui-button--raised dec-button" (click)="dec()"> - </button>
+  <input class="ui-input" type="number" value="{{value}}" min="[[min]]" max="[[max]]">
+  <button class="ui-button ui-button--colored ui-button--raised inc-button" (click)="inc()"> + </button>
 </div>

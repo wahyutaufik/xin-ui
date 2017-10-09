@@ -4,6 +4,8 @@ import html from './doc-page.html';
 
 import 'xin-markdown';
 
+import './doc-page.scss';
+
 class DocPage extends View {
   get template () {
     return html;

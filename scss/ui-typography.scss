@@ -84,6 +84,27 @@ p {
   margin-bottom: 16px;
 }
 
+hr {
+  border: 0px none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+table {
+  min-width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    border-bottom: 1px solid #d0d0d0;
+  }
+
+  th, td {
+    padding: 12px 4px;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+}
+
 a {
   color: rgb(255,64,129);
   font-weight: 500;

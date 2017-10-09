@@ -6,12 +6,20 @@ ui-numberfield {
     display: flex;
 
     input {
-      text-align: right;
-      height: 35px;
+      border-left: 0;
+      border-right: 0;
     }
 
     .ui-button {
       min-width: auto;
+
+      &.inc-button {
+        border-radius: 0 2px 2px 0;
+      }
+
+      &.dec-button {
+        border-radius: 2px 0 0 2px;
+      }
     }
   }
 }
