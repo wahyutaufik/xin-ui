@@ -1,4 +1,7 @@
 import 'xin-ui/scss/ui-layout.scss';
+import 'xin-ui/scss/ui-padding.scss';
+import 'xin-ui/scss/ui-scroll.scss';
+import 'xin-ui/scss/ui-panel.scss';
 import 'xin-ui/scss/ui-typography.scss';
 import 'xin-ui/scss/ui-list.scss';
 import 'xin-ui/scss/ui-header.scss';

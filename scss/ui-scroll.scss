@@ -1,0 +1,13 @@
+.ui-scroll {
+  overflow: auto;
+}
+
+.ui-vscroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.ui-hscroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}

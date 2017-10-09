@@ -1,0 +1,87 @@
+$len: 300px;
+$time: 3000ms;
+
+ui-loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  .ui-loading__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .ui-loading__loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .3s;
+
+    p {
+      text-align: center;
+    }
+
+    svg.infinity {
+      transform: rotate(90deg);
+
+      .infinity__outline {
+        fill: transparent;
+        stroke-width: 4;
+        stroke: #3f51b5;
+        // stroke: #582a6b;
+        stroke-dasharray: $len*0.01, $len;
+        stroke-dashoffset: 0;
+        animation: infinityAnim $time linear infinite;
+      }
+
+      .infinity__bg {
+        fill: transparent;
+        stroke-width: 4;
+        stroke: #424242;
+        opacity: 0.2;
+      }
+
+      @keyframes infinityAnim {
+        12.5% {
+          stroke-dasharray: $len*0.14, $len;
+          stroke-dashoffset: -$len*0.11;
+        }
+        43.75% {
+          stroke-dasharray: $len*0.35, $len;
+          stroke-dashoffset: -$len*0.35;
+        }
+        100% {
+          stroke-dasharray: $len*0.01, $len;
+          stroke-dashoffset: -$len*0.99;
+        }
+      }
+    }
+  }
+
+  &.ui-loading--active {
+    .ui-loading__overlay {
+      opacity: 1;
+    }
+
+    .ui-loading__loader {
+      opacity: 1;
+    }
+  }
+}
