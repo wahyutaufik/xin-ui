@@ -2,8 +2,9 @@ import { define, Component } from '@xinix/xin';
 
 import html from './templates/ui-numberfield.html';
 
-import './scss/ui-numberfield.scss';
+import './scss/ui-input.scss';
 import './scss/ui-button.scss';
+import './scss/ui-numberfield.scss';
 
 export class UINumberField extends Component {
   get template () {

@@ -6,24 +6,32 @@ title: ui-selectfield
 import 'xin-ui/ui-selectfield';
 ```
 
-## Properties
+## Usage
 
-### value: String
+```html
+<ui-selectfield label="ui-selectfield" value="{{value}}"
+  options='[
+    {"label": "One", "value": "1"},
+    {"label": "Two", "value": "2"},
+    {"label": "Three", "value": "3"}
+  ]'>
+</ui-selectfield>
+```
 
-when value changed will fire change events
+<a class="ui-button ui-button--colored" href="#!/examples/ui-selectfield">Example</a>
 
-### label: String
+### Properties
 
-### options: Array
+Name | Type | Description
+- | - | -
+value | String | Value to input, when value changed will fire change events
+label | String |
+options | Array |
+labelKey | String | Default value: "label"
+valueKey | String | Default value: "value"
 
-### labelKey: String
+### Events
 
-default 'label'
-
-### valueKey: String
-
-default 'value'
-
-## Events
-
-### change
+Name | Description
+- | -
+change | Trigger when value changed

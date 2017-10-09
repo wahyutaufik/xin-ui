@@ -3,9 +3,16 @@ title: ui-snackbar
 ---
 
 ```js
-import UISnackbar from 'xin-ui/ui-snackbar';
+import { UISnackbar } from 'xin-ui/ui-snackbar';
+```
 
+## Usage
+
+```js
 UISnackbar.show({
   message: 'Hello world!',
 });
 ```
+
+<a class="ui-button ui-button--colored" href="#!/examples/ui-snackbar">Example</a>
+

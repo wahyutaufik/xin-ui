@@ -1,10 +1,18 @@
+<h5>Read write value</h5>
+
 <label class="ui-label">ui-numberfield</label>
-<ui-numberfield value="{{value}}" max="15"></ui-numberfield>
+<p>Set minimum to 10 and maximum to 15</p>
+<ui-numberfield value="{{value}}" min="10" max="15"></ui-numberfield>
 
 <label class="ui-label">ui-input</label>
-<input class="ui-input" type="number" value="{{value}}" min="10">
+<p>When this input change, value notified to ui-numberfield</p>
+<input class="ui-input" type="number" value="{{value}}">
 
-<ui-textfield label="ui-textfield" value="[[value]]"></ui-textfield>
+<hr>
+
+<h5>Read only value</h5>
+
+<ui-textfield label="ui-textfield (readonly)" value="[[value]]"></ui-textfield>
 
 <label class="ui-label">Value</label>
 <div>Value is <span>[[value]]</span></div>

@@ -6,6 +6,9 @@ title: ui-drawer
 import 'xin-ui/ui-drawer';
 ```
 
+Drawer can be drag out to open or close menu. When links inside drawer tapped /
+clicked, drawer will be closed.
+
 ## Usage
 
 ```html
@@ -20,4 +23,9 @@ import 'xin-ui/ui-drawer';
 </ui-drawer>
 ```
 
-Drawer can be drag out to open or close menu
+### Methods
+
+Async | Name | Description
+- | - | -
+async | open() | Open drawer
+async | close() | Close drawer
