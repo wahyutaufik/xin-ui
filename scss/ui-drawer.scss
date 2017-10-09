@@ -4,11 +4,23 @@
   position: absolute;
 }
 
+.ui-drawer--drag-target {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+
+  &.ui-drawer--visible {
+    width: 21%;
+    right: 0;
+  }
+}
+
 .ui-drawer__content {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 240px;
+  width: 80%;
   height: 100%;
   max-height: 100%;
   position: absolute;
@@ -18,7 +30,7 @@
   box-sizing: border-box;
   border-right: 1px solid #e0e0e0;
   background: #fafafa;
-  transform: translateX(-250px);
+  transform: translateX(-100%);
   transform-style: preserve-3d;
   will-change: transform;
   transition-duration: .2s;
@@ -58,6 +70,19 @@
   }
 }
 
+.ui-drawer--dragged {
+  z-index: 5;
+
+  .ui-drawer__content {
+    transition: none;
+  }
+
+  .ui-drawer__overlay {
+    pointer-events: auto;
+    transition: none;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .ui-drawer {
     width: 240px;
@@ -68,6 +93,7 @@
   }
 
   .ui-drawer__content {
+    width: 240px;
     transform: translateX(0);
   }
 

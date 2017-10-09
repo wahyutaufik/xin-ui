@@ -40,6 +40,10 @@
     color: #222;
   }
 
+  &.ui-button--disabled {
+    color: #f4f4f4;
+  }
+
   &.ui-button--outline {
     border: 1px solid #3f51b5;
 
@@ -57,6 +61,10 @@
 
     &.ui-button--dark {
       border: 1px solid #222;
+    }
+
+    &.ui-button--disabled {
+      border: 1px solid #f4f4f4;
     }
   }
 
@@ -80,6 +88,11 @@
 
     &.ui-button--dark {
       background: #222;
+    }
+
+    &.ui-button--disabled {
+      background: #f4f4f4;
+      color: #999;
     }
   }
 

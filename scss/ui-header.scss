@@ -54,5 +54,13 @@
   font-weight: 400;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 16px;
+
+  &:not(:first-child) {
+    padding-left: 0;
+  }
+
+  &:not(:last-child) {
+    padding-right: 0;
+  }
 }
