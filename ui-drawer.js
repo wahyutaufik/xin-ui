@@ -127,7 +127,14 @@ export class UIDrawer extends Component {
 
     await this.close();
 
-    window.location.href = evt.target.href;
+    let target = evt.target;
+    while (target && !target.href) {
+      target = target.parentElement;
+    }
+
+    if (target) {
+      window.location.href = target.href;
+    }
   }
 }
 
