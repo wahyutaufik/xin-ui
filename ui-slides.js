@@ -37,29 +37,28 @@ export class UISlides extends Component {
     this.classList.add('ui-slides');
   }
 
-  attached () {
-    super.attached();
+  async attached () {
+    await super.attached();
 
-    System.import('swiper').then(Swiper => {
-      const { options } = this;
+    let { default: Swiper } = await import('swiper');
+    const { options } = this;
 
-      if (this.autoplay) {
-        options.autoplay = this.autoplay;
-      }
+    if (this.autoplay) {
+      options.autoplay = this.autoplay;
+    }
 
-      if (this.showDefaultPagination) {
-        options.pagination = '.swiper-pagination';
-      }
+    if (this.showDefaultPagination) {
+      options.pagination = '.swiper-pagination';
+    }
 
-      if (this.showNavigationButton) {
-        options.nextButton = '.swiper-button-next';
-        options.prevButton = '.swiper-button-prev';
-      }
+    if (this.showNavigationButton) {
+      options.nextButton = '.swiper-button-next';
+      options.prevButton = '.swiper-button-prev';
+    }
 
-      this.async(() => {
-        this.swiper = new Swiper(this.$$('.swiper-container'), options);
-      }, 300);
-    });
+    this.async(() => {
+      this.swiper = new Swiper(this.$$('.swiper-container'), options);
+    }, 300);
   }
 }
 

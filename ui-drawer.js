@@ -39,9 +39,11 @@ export class UIDrawer extends Component {
     });
 
     event(this.dragTarget).on('touchmove', (evt) => {
-      posX = evt.touches[0].pageX;
-      this.$.content.style.transform = `translateX(-${maxX - posX}px)`;
-      this.$.overlay.style.opacity = posX / maxX;
+      this.debounce('drag-drawer', () => {
+        posX = evt.touches[0].pageX;
+        this.$.content.style.transform = `translateX(-${maxX - posX}px)`;
+        this.$.overlay.style.opacity = posX / maxX;
+      });
     });
 
     event(this.dragTarget).on('touchend', () => {
