@@ -22,6 +22,11 @@ export class UITextfield extends Component {
         value: 'text',
       },
 
+      placeholder: {
+        type: String,
+        value: '',
+      },
+
       disabled: {
         type: Boolean,
       },
