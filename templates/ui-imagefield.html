@@ -1,0 +1,13 @@
+<label>[[label]]</label>
+<div id="scroller" class="ui-imagefield--scroll">
+  <div class="ui-imagefield__images">
+    <xin-for items="[[value]]" as="file">
+      <template>
+        <div class="ui-imagefield__images__image" style.background-image="[[computeBg(file.url)]]"></div>
+      </template>
+    </xin-for>
+    <div id="imageAddHandle" class="ui-imagefield__images__image-add" (click)="$.fileSelect.click()">Add Image</div>
+  </div>
+</div>
+
+<input type="file" id="fileSelect" accept="[[accept]]" (change)="fileSelected(evt)" multiple="[[multiple]]">

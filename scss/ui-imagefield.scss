@@ -1,0 +1,51 @@
+ui-imagefield {
+  display: block;
+  // border: 1px solid blue;
+
+  label {
+    display: block;
+    font-size: 12px;
+    top: 4px;
+    color: rgba(0, 0, 0, 0.26);
+  }
+
+  #fileSelect {
+    display: none;
+  }
+
+  .ui-imagefield--scroll {
+    overflow: auto;
+  }
+
+  .ui-imagefield--hidden {
+    display: none !important;
+  }
+
+  .ui-imagefield__images {
+    // border: 1px solid green;
+    float: left;
+    margin-right: -999em;
+    white-space: nowrap;
+
+
+    .ui-imagefield__images__image, .ui-imagefield__images__image-add {
+      float: left;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      min-width: 120px;
+      height: 120px;
+      padding: 0;
+      margin: 0;
+      border-radius: 4px;
+      background-color: #ddd;
+    }
+
+    .ui-imagefield__images__image {
+      margin-right: 10px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
