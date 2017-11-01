@@ -43,17 +43,21 @@ export class UISlides extends Component {
     let { default: Swiper } = await import('swiper');
     const { options } = this;
 
-    if (this.autoplay) {
-      options.autoplay = this.autoplay;
+    if (this.autoplay && 'autoplay' in options === false) {
+      options.autoplay = {
+        delay: this.autoplay,
+      };
     }
 
-    if (this.showDefaultPagination) {
-      options.pagination = '.swiper-pagination';
+    if (this.showDefaultPagination && 'pagination' in options === false) {
+      options.pagination = { el: '.swiper-pagination' };
     }
 
-    if (this.showNavigationButton) {
-      options.nextButton = '.swiper-button-next';
-      options.prevButton = '.swiper-button-prev';
+    if (this.showNavigationButton && 'navigation' in options === false) {
+      options.navigation = {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      };
     }
 
     this.async(() => {
