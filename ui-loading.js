@@ -43,6 +43,9 @@ export class UILoading extends Component {
         type: String,
         value: '',
       },
+      content: {
+        type: String,
+      },
     });
   }
 

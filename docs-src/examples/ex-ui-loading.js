@@ -22,7 +22,7 @@ class ExUiLoading extends Component {
   async formSubmitted (evt) {
     evt.preventDefault();
 
-    let loading = await UILoading.show({ message: this.message });
+    let loading = await UILoading.show({ message: this.message, content: 'foo bar' });
     await new Promise(resolve => setTimeout(resolve, 5000));
     await loading.hide();
   }
