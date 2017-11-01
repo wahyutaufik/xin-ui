@@ -1,4 +1,8 @@
 <form (submit)="formSubmitted(evt)">
   <ui-textfield label="Message" value="{{message}}" placeholder="Message..."></ui-textfield>
-  <button class="ui-button ui-button--outline">Show</button>
+  <button class="ui-button ui-button--outline ui-button--block">Show</button>
 </form>
+
+<hr>
+
+<a class="ui-button ui-button--outline ui-button--block" href="#" (click)="showCustomContent(evt)">Show Custom Content</a>

@@ -34,7 +34,7 @@ ui-loading {
     opacity: 0;
     transition: opacity .3s;
 
-    p {
+    .ui-loading__content {
       text-align: center;
     }
 
