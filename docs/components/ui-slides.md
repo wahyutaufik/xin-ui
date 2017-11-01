@@ -25,5 +25,6 @@ Name | Type | Description | Default Value
 showDefaultPagination | Boolean | Show default pagination | false
 showNavigationButton | Boolean | Show navigation button | false
 autoplay | Number | Delay of autoplay | 0
+observer | Boolean | Observe slide changes | false
 options | Object | Full options object, will override options defined by other properties above
 

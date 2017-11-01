@@ -7,6 +7,10 @@ import './scss/ui-slides.scss';
 export class UISlides extends Component {
   get props () {
     return Object.assign({}, super.props, {
+      observer: {
+        type: Boolean,
+      },
+
       options: {
         type: Object,
         value: () => ({}),
@@ -42,6 +46,10 @@ export class UISlides extends Component {
 
     let { default: Swiper } = await import('swiper');
     const { options } = this;
+
+    if (this.observer && 'observer' in options === false) {
+      options.observer = this.observer;
+    }
 
     if (this.autoplay && 'autoplay' in options === false) {
       options.autoplay = {
