@@ -1,16 +1,15 @@
 import { define, Component } from '@xinix/xin';
 
-import '../../ui-numberfield';
 import '../../ui-textfield';
 
-import html from './ex-ui-numberfield.html';
+import html from './ex-ui-textfield.html';
 
-class ExUiNumberfield extends Component {
+class ExUiTextfield extends Component {
   get props () {
     return Object.assign({}, super.props, {
       value: {
-        type: Number,
-        value: 10,
+        type: String,
+        value: 'foo',
       },
     });
   }
@@ -20,4 +19,4 @@ class ExUiNumberfield extends Component {
   }
 }
 
-define('ex-ui-numberfield', ExUiNumberfield);
+define('ex-ui-textfield', ExUiTextfield);
