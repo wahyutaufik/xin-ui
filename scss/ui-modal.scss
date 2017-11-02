@@ -1,0 +1,29 @@
+ui-modal {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .6);
+
+  &.ui-modal--active {
+    display: flex;
+  }
+
+  .ui-modal__content {
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 2px;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
+    min-width: 250px;
+
+    &.ui-modal--full {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

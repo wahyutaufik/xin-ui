@@ -80,15 +80,6 @@ export class UILoading extends Component {
 
     container.removeChild(this);
   }
-
-  actionClicked (evt) {
-    evt.preventDefault();
-    evt.stopImmediatePropagation();
-
-    if (typeof this.actionHandler === 'function') {
-      this.actionHandler();
-    }
-  }
 }
 
 define('ui-loading', UILoading);

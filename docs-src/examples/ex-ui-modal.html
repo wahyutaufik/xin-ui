@@ -1,0 +1,27 @@
+<button class="ui-button ui-button--outline" (click)="$.default.open()">Default</button>
+<button class="ui-button ui-button--outline" (click)="$.full.open()">Full</button>
+
+<ui-modal id="default">
+  <div class="ui-padding">
+    This is default modal
+  </div>
+</ui-modal>
+
+<ui-modal id="full" full>
+  <div class="ui-padding">
+    <p>This is full modal</p>
+    <button class="ui-button ui-button--outline" (click)="$.full.close()">Close</button>
+  </div>
+</ui-modal>
+
+<!-- <h4>Prefilled with data</h4>
+
+<ui-imagefield value="{{value}}"></ui-imagefield>
+
+<h4>With Label</h4>
+
+<ui-imagefield label="Images"></ui-imagefield>
+
+<h4>Multiple</h4>
+
+<ui-imagefield multiple></ui-imagefield> -->

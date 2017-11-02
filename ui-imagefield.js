@@ -1,6 +1,7 @@
 import { Component, define } from '@xinix/xin';
 import '@xinix/xin/components/for';
 
+import './ui-modal';
 import './scss/ui-imagefield.scss';
 
 import html from './templates/ui-imagefield.html';
@@ -81,6 +82,16 @@ export class UIImagefield extends Component {
     } else {
       this.$.imageAddHandle.classList.remove('ui-imagefield--hidden');
     }
+  }
+
+  deleteClicked (evt) {
+    evt.preventDefault();
+    let index = this.$.imageMenu.originEvent.target.__repeatModel.index;
+    if (typeof index !== 'number') {
+      return;
+    }
+    this.splice('value', index, 1);
+    this.$.imageMenu.close();
   }
 }
 
