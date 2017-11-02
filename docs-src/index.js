@@ -1,3 +1,4 @@
+import 'xin-ui/scss/ui-reset.scss';
 import 'xin-ui/scss/ui-layout.scss';
 import 'xin-ui/scss/ui-padding.scss';
 import 'xin-ui/scss/ui-scroll.scss';

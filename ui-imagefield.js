@@ -47,10 +47,10 @@ export class UIImagefield extends Component {
     let files = await Promise.all(Array.from(target.files).map(file => {
       return new Promise(resolve => {
         let reader = new FileReader();
-        reader.addEventListener('load', function () {
+        reader.onload = function () {
           file.url = reader.result;
           resolve(file);
-        }, false);
+        };
         reader.readAsDataURL(file);
       });
     }));

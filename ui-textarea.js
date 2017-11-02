@@ -35,9 +35,14 @@ export class UITextarea extends Component {
 
       maxlength: {
         type: Number,
+        value: 0,
       },
 
       disabled: {
+        type: Boolean,
+      },
+
+      showCounter: {
         type: Boolean,
       },
     });
