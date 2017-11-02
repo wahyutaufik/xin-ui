@@ -1,6 +1,6 @@
 ui-imagefield {
   display: block;
-  // border: 1px solid blue;
+  margin-bottom: 20px;
 
   label {
     display: block;
@@ -22,7 +22,6 @@ ui-imagefield {
   }
 
   .ui-imagefield__images {
-    // border: 1px solid green;
     float: left;
     margin-right: -999em;
     white-space: nowrap;
