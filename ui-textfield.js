@@ -50,6 +50,14 @@ export class UITextfield extends Component {
         value: '',
       },
 
+      required: {
+        type: Boolean,
+      },
+
+      pattern: {
+        type: String,
+      },
+
       min: {
         type: Number,
       },
@@ -88,7 +96,9 @@ export class UITextfield extends Component {
     super.attached();
 
     if (this.trigger) {
-      event(this.$.input).on(this.trigger, this._validate.bind(this));
+      this.trigger.split(' ').forEach(trigger => {
+        event(this.$.input).on(trigger, this._validate.bind(this));
+      });
     }
   }
 

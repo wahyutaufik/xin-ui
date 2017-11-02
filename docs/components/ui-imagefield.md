@@ -12,7 +12,7 @@ import 'xin-ui/ui-imagefield';
 <ui-imagefield value="{{images}}"></ui-imagefield>
 ```
 
-<a class="ui-button ui-button--colored" href="#!/examples/ui-imagefield">Example</a>
+<a class="ui-button ui-button--colored" href="#!/examples/ui-forms">Example</a>
 
 ### Properties
 

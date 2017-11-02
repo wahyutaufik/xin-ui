@@ -27,10 +27,15 @@
     outline: none;
 
     &:focus {
-      + .ui-textarea__label:after {
-        left: 0;
-        visibility: visible;
-        width: 100%;
+
+      + .ui-textarea__label {
+        color: #3f51b5;
+
+        &:after {
+          left: 0;
+          visibility: visible;
+          width: 100%;
+        }
       }
     }
   }

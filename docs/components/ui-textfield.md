@@ -12,7 +12,7 @@ import 'xin-ui/ui-textfield';
 <ui-textfield value="{{theNumber}}"></ui-textfield>
 ```
 
-<a class="ui-button ui-button--colored" href="#!/examples/ui-textfield">Example</a>
+<a class="ui-button ui-button--colored" href="#!/examples/ui-forms">Example</a>
 
 ### Properties
 

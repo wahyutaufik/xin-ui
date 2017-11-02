@@ -1,15 +1,21 @@
 import { define, Component } from '@xinix/xin';
 
+import '../../scss/ui-input.scss';
 import '../../ui-textfield';
+import '../../ui-textarea';
 
-import html from './ex-ui-textfield.html';
+import html from './ex-ui-forms.html';
 
-class ExUiTextfield extends Component {
+class ExUiForms extends Component {
   get props () {
     return Object.assign({}, super.props, {
       value: {
         type: String,
         value: 'foo',
+      },
+      longValue: {
+        type: String,
+        value: 'foo\nbar',
       },
     });
   }
@@ -19,4 +25,4 @@ class ExUiTextfield extends Component {
   }
 }
 
-define('ex-ui-textfield', ExUiTextfield);
+define('ex-ui-forms', ExUiForms);

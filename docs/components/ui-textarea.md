@@ -12,7 +12,7 @@ import 'xin-ui/ui-textarea';
 <ui-textarea value="{{theNumber}}"></ui-textarea>
 ```
 
-<a class="ui-button ui-button--colored" href="#!/examples/ui-textarea">Example</a>
+<a class="ui-button ui-button--colored" href="#!/examples/ui-forms">Example</a>
 
 ### Properties
 
