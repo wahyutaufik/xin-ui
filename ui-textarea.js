@@ -1,9 +1,10 @@
-import { Component, define } from '@xinix/xin';
+import { define } from '@xinix/xin';
+import { UIFormItem } from './ui-form-item';
 import html from './templates/ui-textarea.html';
 
 import './scss/ui-textarea.scss';
 
-export class UITextarea extends Component {
+export class UITextarea extends UIFormItem {
   get props () {
     return Object.assign({}, super.props, {
       value: {
@@ -11,11 +12,6 @@ export class UITextarea extends Component {
         notify: true,
         value: '',
         observer: 'observeValue(value)',
-      },
-
-      label: {
-        type: String,
-        value: '',
       },
 
       rows: {
@@ -28,18 +24,9 @@ export class UITextarea extends Component {
         value: 1,
       },
 
-      placeholder: {
-        type: String,
-        value: '',
-      },
-
       maxlength: {
         type: Number,
         value: 0,
-      },
-
-      disabled: {
-        type: Boolean,
       },
 
       showCounter: {
