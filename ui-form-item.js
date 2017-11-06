@@ -113,4 +113,8 @@ export class UIFormItem extends Component {
       }
     }
   }
+
+  set errorMessage (errMessage) {
+    this.$.input.setCustomValidity(errMessage);
+  }
 }
