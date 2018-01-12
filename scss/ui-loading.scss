@@ -1,6 +1,15 @@
 $len: 300px;
 $time: 3000ms;
 
+.ui-loading__container {
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 ui-loading {
   position: absolute;
   top: 0;

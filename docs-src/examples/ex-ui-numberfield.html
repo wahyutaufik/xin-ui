@@ -2,7 +2,7 @@
 
 <label class="ui-label">ui-numberfield</label>
 <p>Set minimum to 10 and maximum to 15</p>
-<ui-numberfield value="{{value}}" min="10" max="15"></ui-numberfield>
+<ui-numberfield value="{{value}}" min="10" max="15" (change)="valueChanged(evt)"></ui-numberfield>
 
 <label class="ui-label">ui-input</label>
 <p>When this input change, value notified to ui-numberfield</p>

@@ -32,6 +32,14 @@ class ExUiForms extends Component {
     return html;
   }
 
+  checkValidName (evt) {
+    if (this.product.name === 'foo') {
+      this.$.productName.errorMessage = '';
+    } else {
+      this.$.productName.errorMessage = 'Product name is not foo';
+    }
+  }
+
   doSubmit () {
     alert(`Submitting ${JSON.stringify(this.product, null, 2)}`);
   }

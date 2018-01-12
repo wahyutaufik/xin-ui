@@ -1,7 +1,7 @@
 <ui-form class="ui-card ui-padding" (submit)="doSubmit()">
   <h5>Case</h5>
 
-  <ui-textfield label="Name" value="{{product.name}}" required trigger="input blur"></ui-textfield>
+  <ui-textfield id="productName" label="Name" value="{{product.name}}" required trigger="input blur" (change)="checkValidName(evt)"></ui-textfield>
   <ui-selectfield label="Type" value="{{product.type}}" options='[{"value":"foo", "label": "Foo"}, {"value":"bar", "label":"Bar"}]' required trigger="input blur"></ui-selectfield>
   <ui-textarea label="Description" value="{{product.desc}}" required maxlength="10" show-counter></ui-textarea>
 
