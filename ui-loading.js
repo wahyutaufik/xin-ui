@@ -60,6 +60,7 @@ export class UILoading extends Component {
   }
 
   async show () {
+    container.classList.add('visible');
     container.appendChild(this);
 
     await new Promise((resolve, reject) => {
@@ -79,6 +80,7 @@ export class UILoading extends Component {
     });
 
     container.removeChild(this);
+    container.classList.remove('visible');
   }
 }
 
