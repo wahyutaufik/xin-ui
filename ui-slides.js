@@ -7,6 +7,10 @@ import './scss/ui-slides.scss';
 export class UISlides extends Component {
   get props () {
     return Object.assign({}, super.props, {
+      observer: {
+        type: Boolean,
+      },
+
       options: {
         type: Object,
         value: () => ({}),
@@ -24,6 +28,11 @@ export class UISlides extends Component {
         type: Number,
         value: 0,
       },
+
+      slidesPerView: {
+        type: String,
+        value: '',
+      }
     });
   }
 
@@ -37,29 +46,42 @@ export class UISlides extends Component {
     this.classList.add('ui-slides');
   }
 
-  attached () {
-    super.attached();
+  async attached () {
+    await super.attached();
 
-    System.import('swiper').then(Swiper => {
-      const { options } = this;
+    let { default: Swiper } = await import('swiper');
+    const { options } = this;
 
-      if (this.autoplay) {
-        options.autoplay = this.autoplay;
-      }
+    if (this.observer && 'observer' in options === false) {
+      options.observer = this.observer;
+    }
 
-      if (this.showDefaultPagination) {
-        options.pagination = '.swiper-pagination';
-      }
+    if (this.autoplay && 'autoplay' in options === false) {
+      options.autoplay = {
+        delay: this.autoplay,
+      };
+    }
 
-      if (this.showNavigationButton) {
-        options.nextButton = '.swiper-button-next';
-        options.prevButton = '.swiper-button-prev';
-      }
+    if (this.showDefaultPagination && 'pagination' in options === false) {
+      options.pagination = { el: '.swiper-pagination' };
+    }
 
-      this.async(() => {
-        this.swiper = new Swiper(this.$$('.swiper-container'), options);
-      }, 300);
-    });
+    if (this.showNavigationButton && 'navigation' in options === false) {
+      options.navigation = {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      };
+    }
+
+    if (this.slidesPerView && 'slidesPerView' in options === false) {
+      options.slidesPerView = this.slidesPerView;
+    }
+
+    console.log(this.slidesPerView);
+
+    this.async(() => {
+      this.swiper = new Swiper(this.$$('.swiper-container'), options);
+    }, 300);
   }
 }
 
