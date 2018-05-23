@@ -77,8 +77,6 @@ export class UISlides extends Component {
       options.slidesPerView = this.slidesPerView;
     }
 
-    console.log(this.slidesPerView);
-
     this.async(() => {
       this.swiper = new Swiper(this.$$('.swiper-container'), options);
     }, 300);
