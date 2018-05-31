@@ -26,6 +26,14 @@ class ExUiLoading extends Component {
     await new Promise(resolve => setTimeout(resolve, 5000));
     await loading.hide();
   }
+
+  async showCustomContent (evt) {
+    evt.preventDefault();
+
+    let loading = await UILoading.show({ content: '<h4>Loading...</h4><p>This is <b>custom</b> <i>content</i>.</p>' });
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    await loading.hide();
+  }
 }
 
 define('ex-ui-loading', ExUiLoading);

@@ -28,11 +28,6 @@ export class UISlides extends Component {
         type: Number,
         value: 0,
       },
-
-      slidesPerView: {
-        type: String,
-        value: '',
-      }
     });
   }
 
@@ -71,10 +66,6 @@ export class UISlides extends Component {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       };
-    }
-
-    if (this.slidesPerView && 'slidesPerView' in options === false) {
-      options.slidesPerView = this.slidesPerView;
     }
 
     this.async(() => {

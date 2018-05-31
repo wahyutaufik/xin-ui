@@ -1,34 +1,15 @@
-import { Component, define } from '@xinix/xin';
+import { define } from '@xinix/xin';
+import { UIFormItem } from './ui-form-item';
 import html from './templates/ui-textfield.html';
 
 import './scss/ui-textfield.scss';
 
-export class UITextfield extends Component {
+export class UITextfield extends UIFormItem {
   get props () {
     return Object.assign({}, super.props, {
-      value: {
-        type: String,
-        notify: true,
-        value: '',
-      },
-
-      label: {
-        type: String,
-        value: '',
-      },
-
       type: {
         type: String,
         value: 'text',
-      },
-
-      placeholder: {
-        type: String,
-        value: '',
-      },
-
-      disabled: {
-        type: Boolean,
       },
     });
   }

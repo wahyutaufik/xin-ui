@@ -1,7 +1,6 @@
 const path = require('path');
 const DocPlugin = require('./docs-src/webpack-plugins/doc-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const BabiliPlugin = require('babili-webpack-plugin');
 
 module.exports = function ({ mode, minify = false }) {
   let env = {

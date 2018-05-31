@@ -1,2 +1,13 @@
-<select id="field" class="ui-textfield__input" value="{{value}}"></select>
+<select id="input"
+  class="ui-textfield__input"
+  value="{{value}}"
+  disabled$="[[disabled]]"
+  required$="[[required]]"
+  pattern$="[[pattern]]"
+  min="[[min]]"
+  max="[[max]]"
+  minlength="[[minlength]]"
+  maxlength="[[maxlength]]"
+  ></select>
+<div class="ui-textfield__message">[[_errorMessage]]</div>
 <label class="ui-textfield__label">[[label]]</label>

@@ -1,9 +1,10 @@
-import { Component, define } from '@xinix/xin';
+import { define } from '@xinix/xin';
+import { UIFormItem } from './ui-form-item';
 import html from './templates/ui-selectfield.html';
 
 import './scss/ui-textfield.scss';
 
-export class UISelectfield extends Component {
+export class UISelectfield extends UIFormItem {
   get template () {
     return html;
   }
@@ -14,11 +15,6 @@ export class UISelectfield extends Component {
         type: String,
         notify: true,
         observer: 'valueChanged(value)',
-      },
-
-      label: {
-        type: String,
-        value: '',
       },
 
       options: {
@@ -36,7 +32,7 @@ export class UISelectfield extends Component {
         type: String,
         value: 'value',
       },
-      
+
       avoidEmpty: {
         type: Boolean,
       },
@@ -61,7 +57,7 @@ export class UISelectfield extends Component {
   }
 
   optionsChanged (options = []) {
-    if (!this.$.field) {
+    if (!this.$.input) {
       return;
     }
 
@@ -82,10 +78,10 @@ export class UISelectfield extends Component {
         fragment.appendChild(optEl);
       });
 
-      this.$.field.innerHTML = '';
-      this.$.field.appendChild(fragment);
+      this.$.input.innerHTML = '';
+      this.$.input.appendChild(fragment);
 
-      this.$.field.value = this.value || '';
+      this.$.input.value = this.value || '';
     });
   }
 }

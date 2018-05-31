@@ -1,4 +1,10 @@
 ui-slides {
+  display: block;
+
+  .swiper-container {
+    height: 100%;
+  }
+
   .swiper-button-prev,
   .swiper-button-next,
   .swiper-pagination {

@@ -43,6 +43,9 @@ export class UILoading extends Component {
         type: String,
         value: '',
       },
+      content: {
+        type: String,
+      },
     });
   }
 
@@ -57,6 +60,7 @@ export class UILoading extends Component {
   }
 
   async show () {
+    container.classList.add('visible');
     container.appendChild(this);
 
     await new Promise((resolve, reject) => {
@@ -76,15 +80,7 @@ export class UILoading extends Component {
     });
 
     container.removeChild(this);
-  }
-
-  actionClicked (evt) {
-    evt.preventDefault();
-    evt.stopImmediatePropagation();
-
-    if (typeof this.actionHandler === 'function') {
-      this.actionHandler();
-    }
+    container.classList.remove('visible');
   }
 }
 

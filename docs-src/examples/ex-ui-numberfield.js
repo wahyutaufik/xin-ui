@@ -14,8 +14,13 @@ class ExUiNumberfield extends Component {
       },
     });
   }
+
   get template () {
     return html;
+  }
+
+  valueChanged (evt) {
+    console.log('Value change event invoked', evt);
   }
 }
 

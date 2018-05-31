@@ -1,6 +1,20 @@
 $len: 300px;
 $time: 3000ms;
 
+.ui-loading__container {
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
 ui-loading {
   position: absolute;
   top: 0;
@@ -34,7 +48,7 @@ ui-loading {
     opacity: 0;
     transition: opacity .3s;
 
-    p {
+    .ui-loading__content {
       text-align: center;
     }
 
@@ -72,6 +86,10 @@ ui-loading {
           stroke-dashoffset: -$len*0.99;
         }
       }
+    }
+
+    p {
+      text-align: center;
     }
   }
 

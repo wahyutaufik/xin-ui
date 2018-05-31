@@ -16,6 +16,7 @@ export class UINumberField extends Component {
       value: {
         type: Number,
         notify: true,
+        observer: 'observeValueChanged(value)',
       },
 
       min: {
@@ -52,6 +53,10 @@ export class UINumberField extends Component {
       value = this.max;
     }
     this.set('value', value);
+  }
+
+  observeValueChanged (value) {
+    this.fire('change', value);
   }
 }
 

@@ -5,6 +5,7 @@ import html from './doc-app.html';
 import '@xinix/xin/middlewares/lazy-view';
 import '@xinix/xin/components/pager';
 import 'xin-ui/ui-drawer';
+import 'xin-ui/ui-lang';
 
 class DocApp extends App {
   get props () {

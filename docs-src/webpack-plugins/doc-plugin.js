@@ -1,6 +1,6 @@
 const glob = require('glob');
 const path = require('path');
-const fs = require('fs-extra');
+const fs = require('fs');
 const { parse } = require('xin-markdown/parse');
 
 class DocPlugin {
